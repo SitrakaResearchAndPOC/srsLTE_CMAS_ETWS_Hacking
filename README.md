@@ -23,12 +23,35 @@ make -j4
 make install
 ldconfig  
 
-## CONFIG AT : 
-/etc/srslte/enb.conf
-/etc/srslte/epc.conf
+## CONFIG : 
+AT /etc/srslte/enb.conf
+You need to configure enb_id, MCC, MNC and n_prb as same as operator 
+[enb]  
+enb_id = 0x19B  
+mcc = 001  
+mnc = 01  
+n_prb = 50  
+
+NOTED : SRSRAN SUPPORT NOW MULTICELL SO TAC AND PCI IS NOT AT /etc/srslte/enb.conf
+AT /etc/srslte/rr.conf
+You need to configure tac and pci : 
+    // Cells available for handover
+    meas_cell_list =
+    (
+      {
+        eci = 0x19C02;
+        dl_earfcn = 2850;
+        pci = 2;
+        //direct_forward_path_available = false;
+        //allowed_meas_bw = 6;
+        //cell_individual_offset = 0;
+      }
+    );
+
+
 
 ## IMPORTANT CONFIG :  
-replace config at /etc/srslte/sib.conf as : 
+replace config at /etc/srslte/sib.conf as :  
 https://github.com/learning-lte/srsLTE_cmas_etws/commit/88775bb3bd133344a1b6f2248510a68b0ea9f547  
 
 sib10 =  
