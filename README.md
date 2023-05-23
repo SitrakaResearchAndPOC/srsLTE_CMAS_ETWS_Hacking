@@ -1,5 +1,7 @@
 # srsLTE_CMAS_ETWS_Hacking
 ## INSTALLATION :
+sudo apt-get install build-essential cmake libfftw3-dev libmbedtls-dev libboost-program-options-dev libconfig++-dev libsctp-dev  
+
 
 
 ## IMPORTANT CONFIG :  
