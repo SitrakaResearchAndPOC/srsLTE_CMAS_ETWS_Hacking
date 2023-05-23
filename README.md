@@ -27,8 +27,7 @@ ldconfig
 AT /etc/srslte/enb.conf
 You need to configure enb_id, MCC, MNC and n_prb as same as operator 
 
-'''  
-
+```
 [enb]   
 
 enb_id = 0x19B  
@@ -38,8 +37,7 @@ mcc = 001
 mnc = 01  
 
 n_prb = 50  
-'''
-
+```
 NOTED : SRSRAN SUPPORT NOW MULTICELL SO TAC AND PCI IS NOT AT /etc/srslte/enb.conf  
 AT /etc/srslte/rr.conf  
 You need to configure tac and pci :  
