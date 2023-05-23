@@ -96,6 +96,8 @@ sib12 =
 ## GENERATING THIS PDU : 01C576597E2EBBC7F950A8D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D1000A
 * Follow this tutorial : https://www.sharetechnote.com/html/Handbook_LTE_CMAS.html
 * Tools for generating PDU : http://smstools3.kekekasvi.com/topic.php?id=288
+* PYTHON CODE : https://stackoverflow.com/questions/2452861/python-library-for-converting-plain-text-ascii-into-gsm-7-bit-character-set
+* NB : length max of message is 93  
 
 ## COMPARING PDU AND FILE CONFIG OF SRSLTE
 <img src="https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/HexWarningMsg1.jpg" width="1500px" align="center">
