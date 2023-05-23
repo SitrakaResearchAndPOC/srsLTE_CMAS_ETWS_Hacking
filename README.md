@@ -2,7 +2,8 @@
 
 
 
-## IMPORTANT CONFIG : https://github.com/learning-lte/srsLTE_cmas_etws/commit/88775bb3bd133344a1b6f2248510a68b0ea9f547  
+## IMPORTANT CONFIG :  
+https://github.com/learning-lte/srsLTE_cmas_etws/commit/88775bb3bd133344a1b6f2248510a68b0ea9f547  
 
 sib10 =  
 {  
@@ -27,7 +28,7 @@ sib12 =
 * Tools for generating PDU : http://smstools3.kekekasvi.com/topic.php?id=288
 
 
-## Documentation
+## DOCUMENTATIONS
 * https://www.youtube.com/watch?v=EP1PnzMUaCg
 * https://hackmd.io/@AIS3-official/Critical-Infra-day5#spoofing-wireless-emergency-alerts-attack
 * https://www.leg.ba/public-warning-systems-in-mobile-networks/
