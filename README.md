@@ -17,9 +17,12 @@ make -j4
 make install
 ldconfig  
 
-
+## CONFIG AT : 
+/etc/srslte/enb.conf
+/etc/srslte/epc.conf
 
 ## IMPORTANT CONFIG :  
+replace config at /etc/srslte/sib.conf as : 
 https://github.com/learning-lte/srsLTE_cmas_etws/commit/88775bb3bd133344a1b6f2248510a68b0ea9f547  
 
 sib10 =  
