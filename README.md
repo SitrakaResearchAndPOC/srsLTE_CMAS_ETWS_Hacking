@@ -8,6 +8,13 @@ sudo apt-get install uhd-host
 
 git clone https://github.com/learning-lte/srsLTE_cmas_etws  
 
+cd srsLTE_cmas_etws  
+mkdir build  
+cd build  
+cmake ..  
+make -j4
+make install
+ldconfig  
 
 
 
