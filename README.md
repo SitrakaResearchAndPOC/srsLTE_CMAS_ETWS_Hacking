@@ -78,6 +78,9 @@ sib12 =
 
 ## COMPARING PDU AND FILE CONFIG OF SRSLTE
 <img src="https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/HexWarningMsg1.jpg" width="1500px" align="center">
+##                                                            VS
+
+<img src="https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/HexWarningMsg1.jpg" width="1500px" align="center">
 
 ## DOCUMENTATIONS
 * https://www.youtube.com/watch?v=EP1PnzMUaCg
