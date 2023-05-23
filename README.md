@@ -3,6 +3,9 @@
 sudo apt-get install build-essential cmake libfftw3-dev libmbedtls-dev libboost-program-options-dev libconfig++-dev libsctp-dev  
 sudo apt-get install uhd-host  
 
+/usr/lib/uhd/utils/uhd_images_downloader.py
+
+
 
 
 ## IMPORTANT CONFIG :  
