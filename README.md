@@ -76,6 +76,8 @@ sib12 =
 * Follow this tutorial : https://www.sharetechnote.com/html/Handbook_LTE_CMAS.html
 * Tools for generating PDU : http://smstools3.kekekasvi.com/topic.php?id=288
 
+## COMPARING PDU AND FILE CONFIG OF SRSLTE
+<img src="https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/HexWarningMsg1.jpg" width="385px" align="center">
 
 ## DOCUMENTATIONS
 * https://www.youtube.com/watch?v=EP1PnzMUaCg
