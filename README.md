@@ -27,7 +27,8 @@ ldconfig
 AT /etc/srslte/enb.conf
 You need to configure enb_id, MCC, MNC and n_prb as same as operator 
 
-//
+//  
+
 [enb]   
 
 enb_id = 0x19B  
