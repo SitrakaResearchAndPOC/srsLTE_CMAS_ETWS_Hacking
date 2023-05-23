@@ -97,7 +97,12 @@ sib12 =
 * Follow this tutorial : https://www.sharetechnote.com/html/Handbook_LTE_CMAS.html
 * Tools for generating PDU : http://smstools3.kekekasvi.com/topic.php?id=288
 * PYTHON CODE : https://stackoverflow.com/questions/2452861/python-library-for-converting-plain-text-ascii-into-gsm-7-bit-character-set
-* NB : length max of message is 93  
+## NB :  
+* Length max of message is 93 because one page could contain 82octet. In 7bit 82octet is equivalent of 82*8/7 = 93 alphabets  
+* First octet of page is the number of page : 01
+* 2-th until 83-th octet after is the message : C576597E2EBBC7F950A8D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D100
+* 84-th octet is the length of message : 0A or 11 alphabets
+* so message 11 is equivalent of 11*7/8 = 10octet or 20hexer: C576597E2EBBC7F950A8D equivalent of : "Emergency!!"
 
 ## COMPARING PDU AND FILE CONFIG OF SRSLTE
 <img src="https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/HexWarningMsg1.jpg" width="1500px" align="center">
