@@ -102,7 +102,7 @@ sib12 =
 * First octet of page is the number of page : 01
 * 2-th until 83-th octet after is the message : C576597E2EBBC7F950A8D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D100
 * 84-th octet is the length of message : 0A or 11 alphabets
-* so message 11alphabet is equivalent of 11*7/8 octet = 10octet or 20hexer: C576597E2EBBC7F950A8D equivalent of : "Emergency!!"
+* so message 11alphabet is equivalent of 11*7/8 octet = 10octet or 20hexer: C576597E2EBBC7F950A8 equivalent of : "Emergency!!"
 
 ## COMPARING PDU AND FILE CONFIG OF SRSLTE
 <img src="https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/HexWarningMsg1.jpg" width="1500px" align="center">
