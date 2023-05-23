@@ -1,0 +1,251 @@
+srsenb/sib.conf.example
+@@ -1,3 +1,21 @@
+sib10 =
+{
+    message_identifier = 0x1104;
+    serial_number = 0x3000;
+    warning_type = "0x580";
+}
+
+sib12 =
+{
+    message_identifier = 0x1112;
+    serial_number = 0x3000;
+    data_coding_scheme = 01;
+    warning_msg_segment_type = "lastSegment";
+    warning_msg_segment_num = 0;
+    warning_msg_segment_r9 = "01C576597E2EBBC7F950A8D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D1000A";
+};
+
+
+sib1 =
+{
+    intra_freq_reselection = "Allowed";
+@@ -11,7 +29,7 @@ sib1 =
+            si_periodicity = 16;
+
+            // comma-separated array of SIB-indexes (from 3 to 13), leave empty or commented to just scheduler sib2
+            si_mapping_info = [ 3 ];
+            si_mapping_info = [ 12 ];
+        }
+    );
+    system_info_value_tag = 0;
+@@ -153,4 +171,4 @@ sib7 =
+            band_ind = "dcs1800";
+        }
+    );
+};
+};
+  25 changes: 24 additions & 1 deletion25  
+srsenb/sib.conf.mbsfn.example
+@@ -1,3 +1,26 @@
+sib10 =
+{
+    message_identifier = 0x1104;
+    serial_number = 0x3000;
+    warning_type = "0x580";
+}
+
+
+
+sib12 =
+{
+    message_identifier = 0x1102;
+    serial_number = 0x3000;
+    data_coding_scheme = 01;
+    warning_msg_segment_type = "lastSegment";
+    warning_msg_segment_num = 0;
+    warning_msg_segment_r9 = "01C576597E2EBBC7F950A8D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D168341A8D46A3D1000A";
+
+
+
+};
+
+
+sib1 =
+{
+    intra_freq_reselection = "Allowed";
+@@ -9,7 +32,7 @@ sib1 =
+    (
+        {
+            si_periodicity = 16;
+            si_mapping_info = [13]; // comma-separated array of SIB-indexes (from 3 to 13). 
+            si_mapping_info = [12]; // comma-separated array of SIB-indexes (from 3 to 13). 
+            // Leave empty or commented to just scheduler sib2
+        }
+    );
+  38 changes: 38 additions & 0 deletions38  
+srsenb/src/enb_cfg_parser.cc
+@@ -1412,6 +1412,29 @@ int parse_sib9(std::string filename, sib_type9_s* data)
+  }
+}
+
+int parse_sib10(std::string filename, asn1::rrc::sib_type10_s* data) // new sib 10
+{
+  parser::section sib10("sib10");
+  sib10.add_field(make_asn1_bitstring_number_parser("message_identifier", &data->msg_id));
+  sib10.add_field(make_asn1_bitstring_number_parser("serial_number", &data->serial_num));
+  sib10.add_field(make_asn1_octstring_number_parser("warning_type", &data->warning_type));
+  return 0;
+}
+int parse_sib12(std::string filename, asn1::rrc::sib_type12_r9_s* data) // new sib 12
+{
+  parser::section sib12("sib12");
+  sib12.add_field(make_asn1_bitstring_number_parser("message_identifier", &data->msg_id_r9));
+  sib12.add_field(make_asn1_bitstring_number_parser("serial_number", &data->serial_num_r9));
+  sib12.add_field(make_asn1_octstring_number_parser("data_coding_scheme", &data->data_coding_scheme_r9));
+  data->data_coding_scheme_r9_present = true;
+  sib12.add_field(make_asn1_enum_str_parser("warning_msg_segment_type", &data->warning_msg_segment_type_r9));
+  //sib12.add_field(make_asn1_bitstring_number_parser("warning_msg_segment_num", &data->warning_msg_segment_num_r9));
+  sib12.add_field(new parser::field<uint8_t>("warning_msg_segment_num", &data->warning_msg_segment_num_r9));
+  field_asn1_octstring_number<asn1::dyn_octstring,std::string>("warning_msg_segment_r9", &data->warning_msg_segment_r9);
+  //load oct file in future
+  return 0;
+}
+
+int parse_sib13(std::string filename, sib_type13_r9_s* data)
+{
+  parser::section sib13("sib13");
+@@ -1443,6 +1466,8 @@ int parse_sibs(all_args_t* args_, rrc_cfg_t* rrc_cfg_, srsenb::phy_cfg_t* phy_co
+  sib_type4_s*     sib4  = &rrc_cfg_->sibs[3].set_sib4();
+  sib_type7_s*     sib7  = &rrc_cfg_->sibs[6].set_sib7();
+  sib_type9_s*     sib9  = &rrc_cfg_->sibs[8].set_sib9();
+  sib_type10_s*    sib10 = &rrc_cfg_->sibs[9].set_sib10();
+  sib_type12_r9_s* sib12 = &rrc_cfg_->sibs[11].set_sib12_v920();
+  sib_type13_r9_s* sib13 = &rrc_cfg_->sibs[12].set_sib13_v920();
+
+  sib_type1_s* sib1 = &rrc_cfg_->sib1;
+@@ -1524,6 +1549,19 @@ int parse_sibs(all_args_t* args_, rrc_cfg_t* rrc_cfg_, srsenb::phy_cfg_t* phy_co
+    }
+  }
+
+  // Generate SIB10 if defined in mapping info
+  if (sib_is_present(sib1->sched_info_list, sib_type_e::sib_type10)) {
+    if (sib_sections::parse_sib10(args_->enb_files.sib_config, sib10) != SRSLTE_SUCCESS) {
+      return SRSLTE_ERROR;
+    }
+  }
+  // Generate SIB12 if defined in mapping info
+  if (sib_is_present(sib1->sched_info_list, sib_type_e::sib_type12_v920)) {
+    if (sib_sections::parse_sib12(args_->enb_files.sib_config, sib12) != SRSLTE_SUCCESS) {
+      return SRSLTE_ERROR;
+    }
+  }
+
+  if (sib_is_present(sib1->sched_info_list, sib_type_e::sib_type13_v920)) {
+    if (sib_sections::parse_sib13(args_->enb_files.sib_config, sib13) != SRSLTE_SUCCESS) {
+      return SRSLTE_ERROR;
+  70 changes: 70 additions & 0 deletions70  
+srsenb/src/enb_cfg_parser.h
+@@ -60,6 +60,8 @@ int parse_sib3(std::string filename, asn1::rrc::sib_type3_s* data);
+int parse_sib4(std::string filename, asn1::rrc::sib_type4_s* data);
+int parse_sib7(std::string filename, asn1::rrc::sib_type7_s* data);
+int parse_sib9(std::string filename, asn1::rrc::sib_type9_s* data);
+int parse_sib10(std::string filename, asn1::rrc::sib_type10_s* data); // new sib 10
+int parse_sib12(std::string filename, asn1::rrc::sib_type12_r9_s* data); // new sib 12
+int parse_sib13(std::string filename, asn1::rrc::sib_type13_r9_s* data);
+int parse_sibs(all_args_t* args_, rrc_cfg_t* rrc_cfg_, srsenb::phy_cfg_t* phy_config_common);
+
+@@ -535,6 +537,74 @@ field_asn1_bitstring_number<BitString, uint32_t>* make_asn1_bitstring_number_par
+  return new field_asn1_bitstring_number<BitString, uint32_t>(name, store_ptr);
+}
+
+
+// field_asn1_octstring_number
+// num type if num
+template <class OctString, class NumType>
+class field_asn1_octstring_number : public field_asn1
+{
+  OctString* store_ptr;
+public:
+  field_asn1_octstring_number(const char* name_, OctString* store_ptr_, bool* enabled_value_ = NULL) :
+    field_asn1(name_, enabled_value_),
+    store_ptr(store_ptr_)
+  {
+  }
+
+  int parse_value(Setting& root)
+  {
+    NumType val;
+    if (parser::lookupValue(root, name, &val)) {
+        store_ptr->from_number(val);
+      return 0;
+    } else {
+      std::string str_val;
+      if (parser::lookupValue(root, name, &str_val)) {
+        fprintf(stderr, "PARSER ERROR: Expected number for field %s but got the string \"%s\"\n", name,
+                str_val.c_str());
+      }
+    }
+    return -1;
+  }
+};
+//num type is string
+template <class OctString>
+class field_asn1_octstring_number<OctString, std::string> : public field_asn1
+{
+  OctString* store_ptr;
+public:
+  field_asn1_octstring_number(const char* name_, OctString* store_ptr_, bool* enabled_value_ = NULL) :
+    field_asn1(name_, enabled_value_),
+    store_ptr(store_ptr_)
+  {
+  }
+
+  int parse_value(Setting& root)
+  {
+    std::string val;
+    if (parser::lookupValue(root, name, &val)) {
+        store_ptr->from_string(val);
+      return 0;
+    } else {
+      std::string str_val;
+      if (parser::lookupValue(root, name, &str_val)) {
+        fprintf(stderr, "PARSER ERROR: Expected number for field %s but got the string \"%s\"\n", name,
+                str_val.c_str());
+      }
+    }
+    return -1;
+  }
+};
+
+template <class OctString>
+field_asn1_octstring_number<OctString, uint32_t>* make_asn1_octstring_number_parser(const char* name,
+                                                                                    OctString*  store_ptr)
+{
+  return new field_asn1_octstring_number<OctString, uint32_t>(name, store_ptr);
+}
+//end
+
+
+class phr_cnfg_parser : public parser::field_itf
+{
+public:
+  12 changes: 12 additions & 0 deletions12  
+srsenb/src/stack/rrc/rrc.cc
+@@ -487,6 +487,8 @@ bool rrc::is_paging_opportunity(uint32_t tti, uint32_t* payload_len)
+  asn1::rrc::pcch_msg_s pcch_msg;
+  pcch_msg.msg.set_c1();
+  paging_s* paging_rec = &pcch_msg.msg.c1().paging();
+  paging_v920_ies_s paging_rec_v920; 
+  paging_v890_ies_s paging_rec_v890;
+
+  // Default paging cycle, should get DRX from user
+  uint32_t T  = cfg.sibs[1].sib2().rr_cfg_common.pcch_cfg.default_paging_cycle.to_number();
+@@ -522,6 +524,16 @@ bool rrc::is_paging_opportunity(uint32_t tti, uint32_t* payload_len)
+
+      if ((uint32_t)sf_idx == (tti % 10)) {
+        paging_rec->paging_record_list_present = true;
+        //add sib10
+        paging_rec->etws_ind_present = true;
+        //add sib 12
+        paging_rec_v920.cmas_ind_r9_present = true;
+        paging_rec_v890.non_crit_ext_present = true;
+        paging_rec_v890.non_crit_ext = paging_rec_v920;
+        paging_rec->non_crit_ext_present = true;
+        paging_rec->non_crit_ext = paging_rec_v890;
+        //sib12 finish
+
+        paging_rec->paging_record_list.push_back(u);
+        ue_to_remove.push_back(ueid);
+        n++;
