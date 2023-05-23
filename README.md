@@ -39,14 +39,20 @@ You need to configure tac and pci :
     meas_cell_list =  
     (      
       {  
-        eci = 0x19C02;
-        dl_earfcn = 2850;
-        pci = 2;
-        //direct_forward_path_available = false;
-        //allowed_meas_bw = 6;
-        //cell_individual_offset = 0;
-      }
-    );
+        eci = 0x19C02;  
+                dl_earfcn = 2850;  
+                pci = 2;  
+                
+        //direct_forward_path_available = false;  
+        
+        //allowed_meas_bw = 6;  
+        
+        //cell_individual_offset = 0;  
+        
+      }  
+      
+    );  
+    
 
 
 
