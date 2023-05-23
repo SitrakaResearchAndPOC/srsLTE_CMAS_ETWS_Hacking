@@ -40,8 +40,9 @@ You need to configure tac and pci :
     (      
       {  
         eci = 0x19C02;  
-                dl_earfcn = 2850;  
-                pci = 2;  
+        dl_earfcn = 2850;  
+        
+        pci = 2;  
                 
         //direct_forward_path_available = false;  
         
