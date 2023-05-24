@@ -11,7 +11,7 @@ apt-get install git
 
 sudo apt-get install libuhd-dev libuhd3.15.0 uhd-host  
 
-/usr/lib/uhd/utils/uhd_images_downloader.py
+/usr/lib/uhd/utils/uhd_images_downloader.py  
 
 git clone https://github.com/learning-lte/srsLTE_cmas_etws  
 
@@ -19,12 +19,13 @@ cd srsLTE_cmas_etws
 mkdir build  
 cd build  
 cmake ..  
-make -j4
-make install
+make -j4  
+make install  
 ldconfig  
-
+  
+  
 ## CONFIG : 
-AT /etc/srslte/enb.conf
+AT /etc/srslte/enb.conf  
 You need to configure enb_id, MCC, MNC and n_prb as same as operator 
 
 ```
@@ -37,7 +38,9 @@ mcc = 001
 mnc = 01  
 
 n_prb = 50  
-```
+```  
+  
+  
 NOTED : SRSRAN SUPPORT NOW MULTICELL SO TAC AND PCI IS NOT AT /etc/srslte/enb.conf  
 AT /etc/srslte/rr.conf  
 You need to configure tac and pci :  
