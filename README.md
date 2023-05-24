@@ -1,29 +1,50 @@
 # srsLTE_CMAS_ETWS_Hacking
 ## INSTALLATION :
-Inspired at : https://docs.srsran.com/projects/4g/en/next/app_notes/source/pi4/source/index.html  
+Apt install inspired at : https://docs.srsran.com/projects/4g/en/next/app_notes/source/pi4/source/index.html  
   
   
   
   
-  
+```  
 sudo apt-get install build-essential cmake libfftw3-dev libmbedtls-dev libboost-program-options-dev libconfig++-dev libsctp-dev  
+```
+```
 apt-get install git  
-
+```
+```
 sudo apt-get install libuhd-dev libuhd3.15.0 uhd-host  
-
+```
+```
 /usr/lib/uhd/utils/uhd_images_downloader.py  
-
+```
+```
 git clone https://github.com/learning-lte/srsLTE_cmas_etws  
-
+```
+```
 cd srsLTE_cmas_etws  
+```
+```
 mkdir build  
+```
+```
 cd build  
+```
+```
 cmake ..  
+```
+```
 make -j4  
+```
+```
 make install  
+```
+```
 ldconfig  
-  
-  
+```
+```
+srslte_install_configs.sh service
+```
+
 ## CONFIG : 
 AT /etc/srslte/enb.conf  
 You need to configure enb_id, MCC, MNC and n_prb as same as operator 
