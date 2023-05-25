@@ -3,7 +3,7 @@
 Apt install inspired at : https://docs.srsran.com/projects/4g/en/next/app_notes/source/pi4/source/index.html  
   
   
-  
+SHOULD CONFIGURE NODEB AS EEAO AND EEIA AND ADDING SIB12 ON SIB1 MAPPING
   
 ```  
 sudo apt-get install build-essential cmake libfftw3-dev libmbedtls-dev libboost-program-options-dev libconfig++-dev libsctp-dev  
