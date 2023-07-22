@@ -1,4 +1,10 @@
 # srsLTE_CMAS_ETWS_Hacking
+## PROTOCOL FLOW
+<p align="center">
+  <img src="https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/cmas_attack.jpg">
+</p>
+
+
 ## INSTALLATION :
 Apt install inspired at : https://docs.srsran.com/projects/4g/en/next/app_notes/source/pi4/source/index.html  
   
