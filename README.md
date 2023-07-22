@@ -142,7 +142,7 @@ sib12 =
 
 ## IMPORTANT CODE
 * Read all config at [wei_lang](https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/DEF%20CON%20China%201.0%20-%20Weiguang-Li-WARNING-Magnitude-10-Earthquake-Is-Coming-in-One-Minute.pdf)
-* code of parsing and sending ASN of SIB12  of taiwan lab [header](https://github.com/SitrakaResearchAndPOC/fork_srsLTE-pws_taiwan/blob/main/srsenb/src/enb_cfg_parser.h) [source](https://github.com/SitrakaResearchAndPOC/fork_srsLTE-pws_taiwan/blob/main/srsenb/src/enb_cfg_parser.cc)
+* code of parsing and sending ASN of SIB12  of taiwan lab [header](https://github.com/SitrakaResearchAndPOC/fork_srsLTE-pws_taiwan/blob/main/srsenb/src/enb_cfg_parser.h) [source](https://github.com/SitrakaResearchAndPOC/fork_srsLTE-pws_taiwan/blob/main/srsenb/src/enb_cfg_parser.cc) [demo1](https://www.youtube.com/watch?v=EP1PnzMUaCg) [demo2](https://www.youtube.com/watch?v=lanFuySMw0g)
 * sib config of taiwan lab is at [sib_config](https://github.com/SitrakaResearchAndPOC/fork_srsLTE-pws_taiwan/blob/main/srsenb/sib.conf.etws.example)
 * taiwan lab for sib12 is coded at "/home/labuser/Desktop/API/bytes_code" and sib11 is directly coded
 * code of parsing and sending ASN of SIB12  of lte-learning risteel [diff](https://github.com/SitrakaResearchAndPOC/fork_srsLTE_cmas_etws/commit/88775bb3bd133344a1b6f2248510a68b0ea9f547)
