@@ -4,6 +4,11 @@
   <img src="https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/cmas_attack.jpg">
 </p>
 
+## Conferences 
+* MobiSys 2019 - This is Your President Speaking: Spoofing Alerts in 4G LTE Networks [videos](https://www.youtube.com/watch?v=zTgibfM2_0Y)
+* HITBHaxpo D1 - Hacking LTE Public Warning Systems - Weiguang Li [videos](https://www.youtube.com/watch?v=Kagw47aCwfY&t=11s)
+* Warning Magnitude 10 Earthquake Is Coming in One Minute - Weiguang Li - DEF CON China 1 [video](https://www.youtube.com/watch?v=mYe5_SAO4hE)
+
 
 ## INSTALLATION :
 Apt install inspired at : https://docs.srsran.com/projects/4g/en/next/app_notes/source/pi4/source/index.html  
