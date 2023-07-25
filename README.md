@@ -5,10 +5,10 @@
 </p>
 
 ## Conferences 
-* MobiSys 2019 - This is Your President Speaking: Spoofing Alerts in 4G LTE Networks [videos](https://www.youtube.com/watch?v=zTgibfM2_0Y)
-* HITBHaxpo D1 - Hacking LTE Public Warning Systems - Weiguang Li [videos](https://www.youtube.com/watch?v=Kagw47aCwfY&t=11s)
-* Warning Magnitude 10 Earthquake Is Coming in One Minute - Weiguang Li - DEF CON China 1 [videos](https://www.youtube.com/watch?v=mYe5_SAO4hE)
-
+* MobiSys 2019 - This is Your President Speaking: Spoofing Alerts in 4G LTE Networks [videos](https://www.youtube.com/watch?v=zTgibfM2_0Y) [pdf](https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/10150578%26ved%3D2ahUKEwi05aKpman7AhVkMewKHTi8CGkQFnoECAoQAQ%26usg%3DAOvVaw1tA_XqBAni4kX1EDsdeHrt.pdf)
+* HITBHaxpo D1 - Hacking LTE Public Warning Systems - Weiguang Li [videos](https://www.youtube.com/watch?v=Kagw47aCwfY&t=11s) [pdf](https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/HAXPO%20D1%20-%20Hacking%20LTE%20Public%20Warning%20Systems%20-%20Weiguang%20Li%20(3).pdf)
+* Warning Magnitude 10 Earthquake Is Coming in One Minute - Weiguang Li - DEF CON China 1 [videos](https://www.youtube.com/watch?v=mYe5_SAO4hE) [pdf](https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/DEF%20CON%20China%201.0%20-%20Weiguang-Li-WARNING-Magnitude-10-Earthquake-Is-Coming-in-One-Minute.pdf)
+* [demos](https://www.youtube.com/watch?v=pkNHX31TZdY&pp=ygVSTW9iaVN5cyAyMDE5IC0gVGhpcyBpcyBZb3VyIFByZXNpZGVudCBTcGVha2luZ18gU3Bvb2ZpbmcgQWxlcnRzIGluIDRHIExURSBOZXR3b3Jrcw%3D%3D)
 
 ## INSTALLATION :
 Apt install inspired at : https://docs.srsran.com/projects/4g/en/next/app_notes/source/pi4/source/index.html  
