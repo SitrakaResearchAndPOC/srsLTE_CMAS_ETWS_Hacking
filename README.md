@@ -5,7 +5,7 @@
 </p>
 
 ## Conferences 
-* MobiSys 2019 - This is Your President Speaking: Spoofing Alerts in 4G LTE Networks [videos](https://www.youtube.com/watch?v=zTgibfM2_0Y) [pdf](https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/10150578%26ved%3D2ahUKEwi05aKpman7AhVkMewKHTi8CGkQFnoECAoQAQ%26usg%3DAOvVaw1tA_XqBAni4kX1EDsdeHrt.pdf)
+* MobiSys 2019 - This is Your President Speaking: Spoofing Alerts in 4G LTE Networks [videos](https://www.youtube.com/watch?v=zTgibfM2_0Y) [pdf1](https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/cmas-demo-mobisys2019.pdf) [pdf2](https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/10150578%26ved%3D2ahUKEwi05aKpman7AhVkMewKHTi8CGkQFnoECAoQAQ%26usg%3DAOvVaw1tA_XqBAni4kX1EDsdeHrt.pdf)
 * HITBHaxpo D1 - Hacking LTE Public Warning Systems - Weiguang Li [videos](https://www.youtube.com/watch?v=Kagw47aCwfY&t=11s) [pdf](https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/HAXPO%20D1%20-%20Hacking%20LTE%20Public%20Warning%20Systems%20-%20Weiguang%20Li%20(3).pdf)
 * Warning Magnitude 10 Earthquake Is Coming in One Minute - Weiguang Li - DEF CON China 1 [videos](https://www.youtube.com/watch?v=mYe5_SAO4hE) [pdf](https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/DEF%20CON%20China%201.0%20-%20Weiguang-Li-WARNING-Magnitude-10-Earthquake-Is-Coming-in-One-Minute.pdf)
 * [demos](https://www.youtube.com/watch?v=pkNHX31TZdY&pp=ygVSTW9iaVN5cyAyMDE5IC0gVGhpcyBpcyBZb3VyIFByZXNpZGVudCBTcGVha2luZ18gU3Bvb2ZpbmcgQWxlcnRzIGluIDRHIExURSBOZXR3b3Jrcw%3D%3D)
@@ -150,9 +150,11 @@ sib12 =
 * code of parsing and sending ASN of SIB12  of taiwan lab [header](https://github.com/SitrakaResearchAndPOC/fork_srsLTE-pws_taiwan/blob/main/srsenb/src/enb_cfg_parser.h) [source](https://github.com/SitrakaResearchAndPOC/fork_srsLTE-pws_taiwan/blob/main/srsenb/src/enb_cfg_parser.cc) [demo1](https://www.youtube.com/watch?v=EP1PnzMUaCg) [demo2](https://www.youtube.com/watch?v=lanFuySMw0g)
 * sib config of taiwan lab is at [sib_config](https://github.com/SitrakaResearchAndPOC/fork_srsLTE-pws_taiwan/blob/main/srsenb/sib.conf.etws.example)
 * taiwan lab for sib12 is coded at "/home/labuser/Desktop/API/bytes_code" and sib11 is directly coded
+* taiwan lab for PCCH ETWS and CMAS INDICATION at the function rrc::add_paging_id and rrc::is_paging_opportunity in [cmas_etws_ind](https://github.com/SitrakaResearchAndPOC/fork_srsLTE-pws_taiwan/blob/main/srsenb/src/stack/rrc/rrc.cc)
 * code of parsing and sending ASN of SIB12  of lte-learning risteel [diff](https://github.com/SitrakaResearchAndPOC/fork_srsLTE_cmas_etws/commit/88775bb3bd133344a1b6f2248510a68b0ea9f547)
 * sib config of lte-learning risteel is at [sib_config](https://github.com/SitrakaResearchAndPOC/fork_srsLTE_cmas_etws/blob/master/srsenb/sib.conf.example) or [sib_config2](https://github.com/SitrakaResearchAndPOC/fork_srsLTE_cmas_etws/blob/master/srsenb/sib.conf.mbsfn.example) with warning_msg_segment_r9
 * lte-learning risteel version (main branch) have enodeb and ue version (fake_detected_version2 branch)
+* lte-learning risteel for PCCH ETWS and CMAS INDICATION at the function rrc::add_paging_id and rrc::is_paging_opportunity in [cmas_etws_ind](https://github.com/SitrakaResearchAndPOC/fork_srsLTE_cmas_etws/blob/main/srsenb/src/stack/rrc/rrc.cc)
 * old version inferior of [srslte_18_09](https://github.com/srsran/srsRAN_4G/releases/tag/release_18_09) and [srslte_18_09_tree](https://github.com/srsran/srsRAN_4G/tree/release_18_09) doesn't need parser, just add directly the code like liblte_rrc_pack_sys_info_block_type_7_ie at [sib12_rrc](https://github.com/srsran/srsRAN_4G/blob/release_18_09/lib/src/asn1/liblte_rrc.cc) like on [wei_lang](https://github.com/SitrakaResearchAndPOC/srsLTE_CMAS_ETWS_Hacking/blob/main/DEF%20CON%20China%201.0%20-%20Weiguang-Li-WARNING-Magnitude-10-Earthquake-Is-Coming-in-One-Minute.pdf)
 
 ## DOCUMENTATIONS
